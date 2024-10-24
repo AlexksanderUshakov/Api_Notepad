@@ -3,9 +3,9 @@ package main
 import (
 	"context"
 	"github.com/AlexksanderUshakov/todo-app"
-	"github.com/AlexksanderUshakov/todo-app/package/handler"
-	"github.com/AlexksanderUshakov/todo-app/package/repository"
-	"github.com/AlexksanderUshakov/todo-app/package/service"
+	"github.com/AlexksanderUshakov/todo-app/pkg/handler"
+	"github.com/AlexksanderUshakov/todo-app/pkg/repository"
+	"github.com/AlexksanderUshakov/todo-app/pkg/service"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
@@ -14,6 +14,17 @@ import (
 	"os/signal"
 	"syscall"
 )
+
+// @title Todo App API
+// @version 1.0
+// @description API Server for TodoList Application
+
+// @host localhost:8000
+// @BasePath /
+
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name Authorization
 
 func main() {
 	logrus.SetFormatter(new(logrus.JSONFormatter))
